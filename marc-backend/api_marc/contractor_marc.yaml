@@ -1,0 +1,165 @@
+openapi: 3.1.0
+info:
+  title: Authentication API
+  summary: REST APIs for user login in the construction management system
+  version: '1.0'
+servers:
+  - url: http://localhost:9000
+    description: Local development environment
+paths:
+  /login:
+    post:  
+      operationId: login-user
+      description: API for logging in a user with email, password, and role
+      requestBody: 
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                role:
+                  type: string
+                  enum:
+                    - owner
+                    - manager
+                    - engineer
+                    - accountant
+      responses:
+        200:
+          description: Successfully logged in
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: JWT token used for authentication
+                  role:
+                    type: string
+                    description: Role of the logged-in user
+        400:
+          description: Invalid credentials or missing parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/Error"
+        422:
+          description: Missing required fields for email, password, or role
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/Error"
+        500:
+          description: Server error, please try again later
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/Error"
+
+ 
+  /projects:
+    post:
+      summary: Create a new project
+      description: Submit details for a new construction project.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                projectName:
+                  type: string
+                  description: Name of the project
+                  example: "Highway Expansion Project"
+                manager:
+                  type: string
+                  description: Name of the project manager
+                  example: "John Doe"
+                engineer:
+                  type: string
+                  description: Name of the engineer responsible for the project
+                  example: "Jane Smith"
+                account:
+                  type: string
+                  description: Account associated with the project
+                  example: "Finance Division A"
+                projectValue:
+                  type: number
+                  description: Total value of the project in USD
+                  example: 1500000
+                bricks:
+                  type: integer
+                  description: Number of bricks required
+                  example: 5000
+                steel:
+                  type: integer
+                  description: Amount of steel in kg
+                  example: 2000
+                cement:
+                  type: integer
+                  description: Amount of cement in bags
+                  example: 300
+                coarseAggregate:
+                  type: integer
+                  description: Coarse aggregate required in kg
+                  example: 1500
+                fineAggregate:
+                  type: integer
+                  description: Fine aggregate required in kg
+                  example: 1200
+      responses:
+        '201':
+          description: Successfully created the project
+          content:
+            application/json:
+              schema:
+                type: object  
+                properties:
+                  message:
+                    type: string
+                    example: "Project successfully created."
+                  projectId:
+                    type: string
+                    description: ID of the newly created project
+                    example: "64a83b2f-58c5-4f3b-b8b3-1eafc5a7c9b4"
+        '400':
+          description: Invalid input values
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Missing required fields or invalid data in the request"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Something went wrong while creating the project"
+
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string

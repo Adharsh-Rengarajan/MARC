@@ -1,0 +1,18 @@
+meta {
+  name: Create procurement items
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/Procurement
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "",
+    "flag": ""
+  }
+}

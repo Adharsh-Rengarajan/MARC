@@ -1,0 +1,228 @@
+{
+  "accountant": {
+    "dashboard": {
+      "projects": "परियोजनाएं",
+      "projectDetails": {
+        "manager": "प्रबंधक",
+        "engineer": "अभियंता",
+        "projectValue": "परियोजना मूल्य"
+      },
+      "noProjects": "कोई परियोजना नहीं",
+      "orders": "आदेश",
+      "orderDetails": {
+        "orderId": "आदेश आईडी",
+        "bricks": "ईंटें",
+        "steel": "स्टील",
+        "cement": "सीमेंट",
+        "coarseAggregate": "मोटी रोड़ी",
+        "fineAggregate": "बारीक रोड़ी"
+      },
+      "noOrders": "कोई आदेश नहीं",
+      "placeOrder": "आदेश दें",
+      "orderMaterialsChart": "सामग्री चार्ट का आदेश",
+      "logout": "लॉगआउट",
+      "orderCopied": "आदेश कॉपी किया गया"
+    },
+    "purchase": {
+      "close": "बंद करें",
+      "title": "अपना आदेश दें",
+      "projectName": "परियोजना का नाम",
+      "selectProject": "परियोजना चुनें",
+      "managerOrderId": "प्रबंधक आदेश आईडी",
+      "selectManagerOrder": "प्रबंधक आदेश आईडी चुनें",
+      "projectValue": "परियोजना मूल्य",
+      "materials": {
+        "bricks": "ईंटें",
+        "steel": "स्टील",
+        "cement": "सीमेंट",
+        "coarseAggregate": "मोटी रोड़ी",
+        "fineAggregate": "बारीक रोड़ी"
+      },
+      "placeOrder": "आदेश दें"
+    }
+  },
+  "engineerComponent":{
+    "projectDashboard": "परियोजना डैशबोर्ड",
+    "taskCount": "{{count}} कार्य",
+    "goToProject": "परियोजना पर जाएं",
+    "lastUpdated": "अंतिम अपडेट: {{date}}",
+    "pending": "लंबित: {{pendingCount}}",
+    "in-progress": "प्रगति में: {{progressCount}}",
+    "completed": "पूर्ण: {{completedCount}}",
+    "COMPLETED": "पूर्ण",
+    "ALLTASKS": "सभी कार्य",
+    "INPROGRESS": "प्रगति में",
+    "PENDING": "लंबित",
+    "DAY": "दिन {{date}}"
+},
+
+  "engineerHeader": {
+    "title": "{{text}}"
+  },
+  "engineerTaskModal": {
+    "taskDetails": "कार्य विवरण",
+    "status": "स्थिति",
+    "statusOptions": {
+      "pending": "लंबित",
+      "inProgress": "प्रगति में",
+      "completed": "पूर्ण"
+    },
+    "flag": "फ्लैग",
+    "submit": "जमा करें",
+    "close": "बंद करें",
+    "markImportant": "महत्वपूर्ण चिह्नित करें"
+  },
+  "login": {
+    "title": "लॉगिन",
+    "email": "ईमेल",
+    "username": "उपयोगकर्ता नाम",
+    "password": "पासवर्ड",
+    "role": "भूमिका",
+    "selectRole": "भूमिका चुनें",
+    "engineer": "अभियंता",
+    "accountant": "लेखाकार",
+    "contractor": "ठेकेदार",
+    "projectManager": "परियोजना प्रबंधक",
+    "loginButton": "लॉगिन"
+  },
+  "managerComponent": {
+    "common": {
+      "back": "वापस",
+      "addNewDay": "Add New Day",
+      "dayWiseTaskManager": "Day-wise Task Manager"
+    },
+    "dashboard": {
+      "noProjectSelected": "कोई परियोजना नहीं चुनी गई",
+      "selectedProject": "चुनी गई परियोजना: {{name}}",
+      "cards": {
+        "createTasks": {
+          "button": "कार्य बनाएं",
+          "title": "कार्य बनाएं",
+          "description": "चयनित परियोजना के लिए कार्य बनाएं"
+        },
+        "viewTasks": {
+          "button": "कार्य देखें",
+          "title": "कार्य देखें",
+          "description": "चयनित परियोजना के कार्य देखें"
+        },
+        "reports": {
+          "button": "रिपोर्ट",
+          "title": "रिपोर्ट",
+          "description": "चयनित परियोजना की रिपोर्ट देखें"
+        }
+      }
+    }
+  },
+  "project": {
+    "common": {
+      "error": "त्रुटि: {{message}}",
+      "back": "वापस"
+    },
+    "projects": {
+      "noProjects": "कोई परियोजना नहीं",
+      "projectDetails": {
+        "manager": "प्रबंधक",
+        "engineer": "अभियंता",
+        "account":"लेखाकार",
+        "projectValue": "परियोजना मूल्य"
+      },
+      "chartTitle": "परियोजना मूल्य",
+      "title": "परियोजनाएं",
+      "summary": "यह परियोजनाओं का सारांश है"
+    }
+  },
+  "reportsComponent": {
+    "placeOrder": {
+      "button": "आदेश दें",
+      "modalTitle": "अपना आदेश दें",
+      "submitOrder": "आदेश जमा करें",
+      "success": "आदेश सफलतापूर्वक दिया गया",
+      "fields": {
+        "bricks": "ईंटें",
+        "steel": "स्टील",
+        "cement": "सीमेंट",
+        "coarseAggregate": "मोटी रोड़ी",
+        "fineAggregate": "बारीक रोड़ी"
+      }
+    },
+    "tabs": {
+      "overview": "अवलोकन",
+      "materials": "सामग्री",
+      "reports": "रिपोर्ट"
+    },
+    "required": "आवश्यक",
+    "title": "रिपोर्ट",
+    "summary": "यह रिपोर्ट का सारांश है",
+    "overview": "समीक्षा",
+  "materials": "सामग्री"
+  },
+  "ViewTasks": {
+    "noTasks": "कोई कार्य नहीं",
+    "title": "कार्य देखें",
+    "backToManager": "प्रबंधक पर वापस जाएं",
+"error": "त्रुटि",
+
+    "table": {
+      "day": "दिन",
+      "title": "शीर्षक",
+      "description": "विवरण",
+      "status": "स्थिति",
+      "finalStatus": "अंतिम स्थिति",
+      "taskNumber": "कार्य संख्या"
+    },
+    "filters": {
+      "searchByTitle": "शीर्षक से खोजें",
+      "title": "फ़िल्टर",
+      "status": "स्थिति",
+      "statusAll": "सभी",
+      "statusPending": "लंबित",
+      "statusInProgress": "प्रगति में",
+      "statusCompleted": "पूर्ण",
+      "clearFilters": "फ़िल्टर साफ़ करें"
+    }
+  },
+  "navBar": {
+  "titleMarc": "मार्क",
+  "Dashboard": "डैशबोर्ड",
+  "CreateProject": "प्रोजेक्ट बनाएं",
+  "Logout": "लॉग आउट"
+},
+"ownerLanding": {
+  "Dashboad": "डैशबोर्ड",
+  "recentLocation": "हाल ही की परियोजना का स्थान",
+  "loading": "सबसे हाल की परियोजना के लिए मानचित्र लोड हो रहा है...",
+  "graph": "प्रबंधक के आदेशों का ग्राफ़िकल दृश्य",
+  "Bricks": "ईंटें",
+  "Cement": "सीमेंट",
+  "CoarseAggregate": "मोटा एग्रीगेट",
+  "FineAggregate": "बारीक एग्रीगेट",
+  "Steel": "इस्पात",
+  "materialUsed": "प्रत्येक प्रबंधक आदेश में उपयोग की गई सामग्री"
+},
+"createProject": {
+  "title": "प्रोजेक्ट बनाएं",
+  "searchPlaceholder": "प्रोजेक्ट खोजें",
+  "managers": "प्रबंधक",
+  "engineers": "इंजीनियर",
+  "accounts": "लेखाकार",
+  "projectValue": "प्रोजेक्ट मूल्य",
+  "edit": "संपादित करें",
+  "delete": "हटाएं",
+  "createNewProject": "नया प्रोजेक्ट बनाएं",
+  "projectName": "प्रोजेक्ट का नाम",
+  "materialstitle": "सामग्री",
+  "bricks": "ईंटें",
+  "steel": "इस्पात",
+  "cement": "सीमेंट",
+  "coarseAggregate": "मोटा एग्रीगेट",
+  "fineAggregate": "बारीक एग्रीगेट",
+  "Location": "स्थान",
+  "cancel": "रद्द करें",
+  "save": "सहेजें"
+},
+"manager": {
+  "dayWiseTaskManager": "दिवसवार कार्य प्रबंधक",
+  "backToManager": "प्रबंधक पर वापस जाएं",
+  "addNewDay": "नया दिन जोड़ें"
+}
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "marc API (Engineer)",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

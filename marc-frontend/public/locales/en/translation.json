@@ -1,0 +1,227 @@
+{
+  "accountant":{
+    "dashboard":{
+      "projects": "Projects",
+      "projectDetails": {
+        "manager": "Manager",
+        "engineer": "Engineer",
+        "projectValue": "Project Value"
+      },
+      "noProjects": "No Projects",
+      "orders": "Orders",
+      "orderDetails": {
+        "orderId": "Order ID",
+        "bricks": "Bricks",
+        "steel": "Steel",
+        "cement": "Cement",
+        "coarseAggregate": "Coarse Aggregate",
+        "fineAggregate": "Fine Aggregate"
+      },
+      "noOrders": "No Orders",
+      "placeOrder": "Place Order",
+      "orderMaterialsChart": "Order Materials Chart",
+      "logout": "Logout",
+      "orderCopied": "Order Copied"
+    },
+    "purchase": {
+      "close": "Close",
+      "title": "Place Your Order",
+      "projectName": "Project Name",
+      "selectProject": "Select Project",
+      "managerOrderId": "Manager Order ID",
+      "selectManagerOrder": "Select Manager Order ID",
+      "projectValue": "Project Value",
+      "materials": {
+        "bricks": "Bricks",
+        "steel": "Steel",
+        "cement": "Cement",
+        "coarseAggregate": "Coarse Aggregate",
+        "fineAggregate": "Fine Aggregate"
+      },
+      "placeOrder": "Place Order"
+    }
+  },
+  "engineerComponent": {
+    "projectDashboard": "Project Dashboard",
+    "taskCount": "{{count}} Tasks",
+    "goToProject": "Go to Project",
+    "lastUpdated": "Last Updated: {{date}}",
+    "pending": "Pending: {{pendingCount}}",
+    "in-progress": "In Progress: {{progressCount}}",
+    "completed": "Completed: {{completedCount}}",
+    "COMPLETED": "COMPLETED",
+    "ALLTASKS": "ALL TASKS",
+    "INPROGRESS": "IN-PROGRESS",
+    "PENDING": "PENDING",
+    "DAY": "{{date}}"
+  },
+  "engineerHeader":{
+    "title": "{{text}}"
+  },
+  "engineerTaskModal": {
+    "taskDetails": "Task Details",
+    "status": "Status",
+    "statusOptions": {
+      "pending": "Pending",
+      "inProgress": "In Progress",
+      "completed": "Completed"
+    },
+    "flag": "Flag",
+    "submit": "Submit",
+    "close": "Close",
+    "markImportant": "Mark Important"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "username": "Username",
+    "password": "Password",
+    "role": "Role",
+    "selectRole": "Select Role",
+    "engineer": "Engineer",
+    "accountant": "Accountant",
+    "contractor": "Contractor",
+    "projectManager": "Manager",
+    "loginButton": "Login"
+  },
+  "managerComponent": {
+    "common": {
+      "back": "Back",
+      "addNewDay": "Add New Day",
+      "dayWiseTaskManager": "Day-wise Task Manager"
+    },
+    "dashboard": {
+      "noProjectSelected": "No Project Selected",
+      "selectedProject": "Selected Project is {{name}}",
+      "cards": {
+        "createTasks": {
+          "button": "Create Tasks",
+          "title": "Create Tasks",
+          "description": "Create tasks for the selected project"
+        
+        },
+        "viewTasks": {
+          "button": "View Tasks",
+          "title": "View Tasks",
+          "description": "View tasks for the selected project"
+        },
+        "reports": {
+          "button": "Reports",
+          "title": "Reports",
+          "description": "View reports for the selected project"
+        }
+      }
+    }
+  },
+  "project":{
+    "common":{
+      "error": "Error: {{message}}",
+      "back": "Back"
+    },
+    "projects":{
+      "noProjects": "No Projects",
+      "projectDetails": {
+        "manager": "Manager",
+        "engineer": "Engineer",
+        "account":"Accountant",
+        "projectValue": "Project Value"
+      },
+      "chartTitle": "Project Value",
+      "title": "Projects",
+      "summary": "This is a summary of the projects"
+    }
+  },
+  "reportsComponent": {
+    "placeOrder": {
+      "button": "Place Order",
+      "modalTitle": "Place Your Order",
+      "submitOrder": "Submit Order",
+      "success": "Order Placed Successfully",
+      "fields": {
+        "bricks": "Bricks",
+        "steel": "Steel",
+        "cement": "Cement",
+        "coarseAggregate": "Coarse Aggregate",
+        "fineAggregate": "Fine Aggregate"
+      }
+    },
+    "tabs": {
+      "overview": "Overview",
+      "materials": "Materials",
+      "reports": "Reports"
+    },
+    "required": "Required",
+    "title": "Reports",
+    "overview":"Overview",
+    "materials" :"Materials",
+    "summary": "This is a summary of the reports"
+  },
+  "ViewTasks": {
+    "noTasks": "No Tasks",
+    "title": "View Tasks",
+    "backToManager": "Back To Manager",
+    "error":"Error",
+        "table": {
+      "day": "Day",
+      "title": "Title",
+      "description": "Description",
+      "status": "Status",
+      "finalStatus": "Important Tasks",
+      "taskNumber": "Task Number"
+    },
+    "filters": {
+      "searchByTitle": "Search by title",
+      "title": "Filters",
+      "status": "Status",
+      "statusAll": "All",
+      "statusPending": "Pending",
+      "statusInProgress": "In Progress",
+      "statusCompleted": "Completed",
+      "clearFilters": "Clear Filters"
+    }
+  },
+  "navBar":{
+    "titleMarc": "MARC",
+    "Dashboard": "Dashboard",
+    "CreateProject": "Create Project",
+    "Logout": "Logout"
+  },
+  "ownerLanding":{
+    "Dashboad": "Dashboad",
+    "recentLocation": "Recent Project Location",
+    "loading": "Loading map for the most recent project...",
+    "graph": "Graphical View of Manager Orders",
+    "Bricks": "Bricks",
+    "Cement": "Cement",
+    "CoarseAggregate": "Coarse Aggregate",
+    "FineAggregate": "Fine Aggregate",
+    "Steel": "Steel",
+    "materialUsed": "Materials Used in Each Manager Order"
+  },
+  "createProject":{
+    "title": "Create Project",
+    "searchPlaceholder": "Search projects",
+    "managers": "Manager",
+    "engineers": "Engineer",
+    "accounts": "Accountant",
+    "projectValue": "Project Value",
+    "edit": "Edit",
+    "delete": "Delete",
+    "createNewProject": "Create new project",
+    "projectName": "Project Name",
+    "materialstitle": "Materials",
+    "bricks": "Bricks",
+    "steel": "Steel",
+    "cement": "Cement",
+    "coarseAggregate": "Coarse Aggregate",
+    "fineAggregate": "Fine Aggregate",
+    "Location": "Location",
+    "cancel": "Cancel",
+    "save" : "Save"
+  },
+  "manager":{
+    "dayWiseTaskManager": "Daywise Task Manager",
+    "backToManager": "Back To Manager",
+    "addNewDay": "Add New Day"
+  }
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Get all manager order details
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/accounts
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ManagerOrderid": "jayanthMO1",
+    "projectId": "jayanthP1",
+    "bricks": 1000,
+    "steel": 500,
+    "cement": 200,
+    "coarseAggregate": 150,
+    "fineAggregate": 120,
+    "vendorDetails": {
+      "vendorName": "XYZ Suppliers",
+      "vendorContact": "9876543210",
+      "vendorAddress": "123 Supply Lane, Construction City"
+    },
+    "trackingDetails": {
+      "status": "Dispatched",
+      "estimatedDelivery": "2024-12-05T10:30:00Z",
+      "currentLocation": "Warehouse A"
+    }
+  }
+}

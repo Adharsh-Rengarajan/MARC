@@ -1,0 +1,126 @@
+.projectCard {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 25px; 
+  width: 100%; 
+  max-width: 500px; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  color: var(--primary-color);
+  margin-right: 12px;
+  font-size: 1.5rem;
+}
+
+.projectTitle {
+  font-weight: 600;
+  font-size: 1.25rem; // Increase font size for better readability
+  color: var(--text-primary);
+  margin-right: auto;
+}
+
+.divider {
+  margin: 12px 0;
+  border-color: #ddd; // Lighter border color for subtle separation
+}
+
+.taskCounts {
+  margin-bottom: 16px;
+}
+
+.statusTitle {
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.statusContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-radius: 8px;
+  background-color: #f8f8f8; 
+}
+
+.status {
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #f4f4f4; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 0.875rem; 
+}
+
+.pending {
+  background-color: #f39c12; // Orange for pending
+}
+
+.inProgress {
+  background-color: #3498db; // Blue for in-progress
+}
+
+.completed {
+  background-color: #2ecc71; // Green for completed
+}
+
+.lastUpdated {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: #888; 
+}
+
+.smallIcon {
+  margin-right: 8px;
+  font-size: small;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px;
+  background-color: #f8f8f8; 
+}
+
+.goToProjectButton {
+  text-transform: none;
+  font-weight: 500;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: rgb(139, 23, 139);
+  }
+}

@@ -1,0 +1,549 @@
+openapi: 3.1.0
+info:
+  title: Construction Management API
+  summary: REST API for construction Management
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:9000
+    description: Local development environment
+    
+paths:
+  /UserRole:
+    get:
+      summary: Retrieve user roles
+      description: Get the roles of a user by providing username and password.
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved roles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      type: string
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Missing or invalid username/password"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Something went wrong while retrieving user roles"
+  /Projects:
+    post:
+      summary: Create a new project
+      description: Submit details for a new construction project.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                projectName:
+                  type: string
+                managers:
+                  type: array
+                  items:
+                    type: string
+                engineers:
+                  type: array
+                  items:
+                    type: string
+                accounts:
+                  type: array
+                  items:
+                    type: string
+                projectValue:
+                  type: number
+                bricks:
+                  type: integer
+                steel:
+                  type: integer
+                cement:
+                  type: integer
+                sand:
+                  type: integer
+                coarseAggregate:
+                  type: integer
+                fineAggregate:
+                  type: integer
+      responses:
+        '201':
+          description: Successfully created the project
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  projectId:
+                    type: string
+        '400':
+          description: Invalid input values
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Missing required fields or invalid data in the request"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Something went wrong while creating the project"
+
+  /EngineerUpdate:
+    get:
+      summary: Retrieve engineer update tasks
+      description: Retrieve engineer updates based on the provided task name and flag.
+      parameters:
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: flag
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved engineer update details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  labors:
+                    type: array
+                    items:
+                      type: string
+                  materials:
+                    type: array
+                    items:
+                      type: string
+                  equipments:
+                    type: array
+                    items:
+                      type: string
+                  tasks:
+                    type: array
+                    items:
+                      type: string
+                  flag:
+                    type: string
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid flag value"
+        '404':
+          description: Engineer updates not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Engineer updates not found for the given task"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Something went wrong, please try again later"
+    patch:
+      summary: Updating the daily task
+      description: Updating the daily tasks that are assigned to the engineers
+      responses:
+        '200':
+          description: Successfully updated the task
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task:
+                    type: object
+                    $ref: "/#/components/schemas/Task"
+        '400':
+          description: Authentication Error
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "/#/components/schemas/Error"
+        '500':
+          description: Authentication Error
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "/#/components/schemas/Error"
+    post:
+        summary: Writing the report
+        description: Writing the daily report from the engineer side
+        responses:
+          '200':
+            description: Successfully wrote the task
+            content:
+                application/json:
+                  schema:
+                    type: object
+                    $ref: "/#/components/schemas/Report"
+
+        '400':
+          description: Authentication Error
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "/#/components/schemas/Error"
+        '500':
+          description: Authentication Error
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "/#/components/schemas/Error"
+
+  /Procurement:
+    get:
+      summary: Getting the task details
+      description: After the login, we are getting the task details
+      responses:
+        '200':
+          description: Succesfully retrieved the task details
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "/#/components/schemas/Task"
+        '400':
+          description: Authentication Error
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "/#/components/schemas/Error"
+        '500':
+          description: Authentication Error
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "/#/components/schemas/Error"
+    post:
+      summary: Create procurement items
+      description: Submit procurement details such as name and flag for the task.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                flag:
+                  type: string
+      responses:
+        '201':
+          description: Successfully created procurement items
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  procurementId:
+                    type: string
+        '400':
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Missing required fields: name, flag"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Something went wrong, please try again later"
+
+
+  /Procurement/Update:
+    post:
+      summary: Update procurement items
+      description: Update procurement details such as bricks, steel, cement, etc.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bricks:
+                  type: integer
+                steel:
+                  type: integer
+                cement:
+                  type: integer
+                sand:
+                  type: integer
+                coarseAggregate:
+                  type: integer
+                fineAggregate:
+                  type: integer
+      responses:
+        '200':
+          description: Successfully updated procurement items
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          description: Invalid input values
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid value for cement"
+        '404':
+          description: Procurement items not found for update
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Procurement items not found"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Something went wrong, please try again later"
+
+  /ordersApproval:
+    get:
+      summary: Retrieve approval status of orders
+      description: Get the approval status of orders based on approval flag.
+      parameters:
+        - name: approvalFlag
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [approved, rejected, pending]
+            description: Filter orders by approval flag.
+      responses:
+        '200':
+          description: Successfully retrieved the status of orders
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orders:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        orderId:
+                          type: string
+                        status:
+                          type: string
+                          enum: [approved, rejected, pending]
+        '400':
+          description: Invalid approval flag provided
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid approvalFlag value"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Something went wrong, please try again later"
+  /Accounts:
+
+      get:
+        summary: Retrieve requests from procurement team
+        description: API for getting the requests to the procurement team
+        responses:
+          '200':
+            description: Succesfully data has been fetched
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: "/#/components/schemas/GetRequest"
+          '400':
+            description: Authentication Error
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: "/#/components/schemas/Error"
+          '500':
+            description: Authentication Error
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: "/#/components/schemas/Error"
+
+
+      post:
+        summary: Write requests from procurement team
+        description: API for Writing the requests to the procurement team
+        responses:
+          '200':
+            description: Succesfully data has been written
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: "/#/components/schemas/WriteRequest"
+          '400':
+            description: Authentication Error
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: "/#/components/schemas/Error"
+          '500':
+            description: Authentication Error
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: "/#/components/schemas/Error"
+components:
+    schemas:
+        Task:
+            type: object
+            properties:
+                name:
+                    type: boolean
+
+        Report:
+            type: object
+            properties:
+                bricks:
+                    type: integer
+                steel:
+                    type: integer
+                cement:
+                    type: integer
+                sand: 
+                    type: integer
+                coarseAggregate:
+                    type: integer
+                finalAggregate:
+                    type: integer
+
+        GetRequest:
+          type: object
+          properties:
+            income:
+              type: number
+            expenditure:
+              type: number
+            orders:
+              type: array
+
+        WriteRequest:
+          type: object
+          properties:
+            location:
+              type: string
+            expenditure:
+              type: integer
+            approval:
+              type: boolean
+
+        Error:
+            type: object
+            properties:
+                code:
+                    type: string
+                message: 
+                    type: string

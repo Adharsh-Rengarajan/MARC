@@ -1,0 +1,15 @@
+meta {
+  name: Retrieve approval status of orders
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/ordersApproval
+  body: none
+  auth: none
+}
+
+params:query {
+  ~approvalFlag: 
+}

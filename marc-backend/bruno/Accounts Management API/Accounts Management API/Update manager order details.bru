@@ -1,0 +1,37 @@
+meta {
+  name: Update manager order details
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:9000/managerTasks/123e4567-e89b-12d3-a456-426614174001
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type:: application/json
+}
+
+body:json {
+  {
+    "projectId": "123e4567-e89b-12d3-a456-426614174000",
+    "ManagerOrderid": "123e4567-e89b-12d3-a456-426614174001",
+    "bricks": 750,
+    "steel": 250,
+    "cement": 400,
+    "coarseAggregate": 150,
+    "fineAggregate": 75,
+    "status": "approved",
+    "vendorDetails": {
+      "name": "Updated Vendor",
+      "contact": "+1234567899",
+      "address": "Updated Address"
+    },
+    "trackingDetails": {
+      "trackingNumber": "UPDATEDTRACK123456",
+      "estimatedDelivery": "2024-12-10"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+// report.scss
+
+// General Styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3e5f5; // Light purple background
+  margin: 0;
+  padding: 0;
+}
+
+.report-container {
+  padding: 20px;
+}
+
+.content-wrapper {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  h4 {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #6a1b9a; // Dark purple header text
+  }
+}
+
+// Tabs and Table
+.table-container {
+  margin-top: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  text-align: left;
+
+  th, td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    color: #6a1b9a; // Dark purple text for table headers
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .no-data {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+}
+
+// Modal
+// .modal-container {
+//   width: 50%;
+//   background: #fff;
+//   border-radius: 8px;
+//   padding: 20px;
+//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+// }
+
+// .modal-container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 50%;
+//   background: #fff;
+//   border-radius: 8px;
+//   padding: 20px;
+//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+// }
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px; /* You can adjust this width */
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// Buttons (Global Button Styling)
+button,
+.MuiButton-root {
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #6a1b9a; // Dark purple button color
+  color: white;
+  &:hover {
+    opacity: 0.9;
+    background-color: #4a148c; // Darker purple on hover
+  }
+}
+
+// Back Button
+.MuiButton-outlined {
+  background-color: #6a1b9a; // Dark purple background
+  color: white;
+  border-color: #6a1b9a;
+
+  &:hover {
+    background-color: #4a148c; // Darker purple on hover
+    border-color: #4a148c;
+  }
+}
+
+// Placeholder Button Style
+button[disabled],
+.MuiButton-root[disabled] {
+  background-color: #e1bee7; // Light purple for disabled state
+  color: #7b1fa2; // Lighter purple for text
+  cursor: not-allowed;
+}
+
+// Snackbar
+.snackbar-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}

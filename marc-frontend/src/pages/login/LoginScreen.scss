@@ -1,0 +1,91 @@
+// Variables
+$primary-color: #6a1b9a;
+$secondary-color: #6c757d;
+$error-color: #dc3545;
+$background-color: #f8f9fa;
+
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: $background-color;
+
+  .login-left {
+    flex: 1;
+    background: linear-gradient(120deg, #6a1b9a, $secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    .graphic-image {
+      max-width: 80%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .login-right {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      color: $primary-color;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-field {
+      width: 100%;
+      margin-bottom: 20px;
+
+      input,
+      .MuiInputBase-input {
+        padding: 12px;
+        border-radius: 4px;
+      }
+    }
+
+    .error-message {
+      color: $error-color;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .login-button {
+      background-color: $primary-color;
+      color: white;
+      font-weight: bold;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+
+    .login-left,
+    .login-right {
+      flex: none;
+      width: 100%;
+      box-shadow: none;
+    }
+
+    .graphic-image {
+      max-width: 90%;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@mixin title() {
+    font-family: $font;
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+@mixin nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+@mixin button {
+    font-family: $font;
+    background-color: #007bff;
+    color: whitesmoke;
+    font-size: medium;
+    border: 0.1px solid whitesmoke;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    cursor: pointer;
+}

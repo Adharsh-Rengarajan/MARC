@@ -1,0 +1,27 @@
+meta {
+  name: Create a new project
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/projects
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "projectName": "",
+    "managers": [],
+    "engineers": [],
+    "accounts": [],
+    "projectValue": "",
+    "bricks": "",
+    "steel": "",
+    "cement": "",
+    "sand": "",
+    "coarseAggregate": "",
+    "fineAggregate": ""
+  }
+}

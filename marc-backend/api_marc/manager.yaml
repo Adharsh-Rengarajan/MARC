@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: Construction Management API
+  summary: REST API for construction Management
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:9000
+    description: Local development environment
+paths:
+ /managerTasks:
+   get:
+    summary: Retrieve manager tasks
+    description: Fetch a list of tasks assigned to managers along with their status and flag.
+    responses:
+      '200':
+        description: Successfully retrieved manager tasks
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tasks:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      title:
+                        type: string
+                      description:
+                        type: string
+                      dueDate:
+                        type: string
+                        format: date-time
+                      status:
+                        type: string
+                        enum: [pending, in-progress, completed]
+                      flag:
+                        type: boolean
+      '400':
+        description: Invalid request parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error:
+                  type: string
+                  example: "Invalid request parameters provided"
+      '500':
+        description: Internal server error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error:
+                  type: string
+                  example: "Something went wrong, please try again later"
+  
+   post:
+    summary: Add new manager tasks
+    description: Add tasks to the manager's task list.
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              task:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    description:
+                      type: string
+                    dueDate:
+                      type: string
+                      format: date-time
+                    status:
+                      type: string
+                      enum: [pending, in-progress, completed]
+              flag:
+                type: boolean
+    responses:
+      '201':
+        description: Successfully added manager tasks
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                taskId:
+                  type: string
+      '400':
+        description: Invalid input data
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error:
+                  type: string
+                  example: "Missing required fields or invalid data in the request"
+      '500':
+        description: Internal server error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error:
+                  type: string
+                  example: "Something went wrong while adding tasks"

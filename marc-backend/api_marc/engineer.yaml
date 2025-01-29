@@ -1,0 +1,127 @@
+openapi: 3.1.0
+info:
+  title: Engineer Update API
+  summary: REST APIs for managing engineer updates in the construction management system
+  version: '1.0'
+servers:
+  - url: http://localhost:9000
+    description: Local development environment
+paths:
+  /engineerUpdate:
+    get:
+      operationId: get-engineer-updates
+      description: Fetch all engineer updates
+      responses:
+        200:
+          description: List of engineer updates retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EngineerUpdate"
+        500:
+          description: Server error, please try again later
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      operationId: create-engineer-update
+      description: Create a new engineer update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineerUpdate"
+      responses:
+        201:
+          description: Engineer update created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EngineerUpdate"
+        400:
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        422:
+          description: Missing required fields in the request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        500:
+          description: Server error, please try again later
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    EngineerUpdate:
+      type: object
+      properties:
+        engineerName:
+          type: string
+          description: Name of the engineer
+        engineerId:
+          type: string
+          description: Unique ID of the engineer
+        projectName:
+          type: string
+          description: Name of the project
+        projectId:
+          type: string
+          description: Unique ID of the project
+        bricks:
+          type: number
+          description: Quantity of bricks used
+        steel:
+          type: number
+          description: Quantity of steel used
+        cement:
+          type: number
+          description: Quantity of cement used
+        sand:
+          type: number
+          description: Quantity of sand used
+        coarseAggregate:
+          type: number
+          description: Quantity of coarse aggregate used
+        fineAggregate:
+          type: number
+          description: Quantity of fine aggregate used
+        reports:
+          type: array
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date-time
+                description: Date of the report
+              description:
+                type: string
+                description: Description of the report
+              progress:
+                type: number
+                description: Progress percentage
+              issues:
+                type: string
+                description: Issues encountered
+              resolutions:
+                type: string
+                description: Resolutions for the issues
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Error code
+        message:
+          type: string
+          description: Error message
