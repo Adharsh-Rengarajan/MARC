@@ -1,0 +1,22 @@
+meta {
+  name: Update procurement items
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/Procurement/Update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "bricks": "",
+    "steel": "",
+    "cement": "",
+    "sand": "",
+    "coarseAggregate": "",
+    "fineAggregate": ""
+  }
+}

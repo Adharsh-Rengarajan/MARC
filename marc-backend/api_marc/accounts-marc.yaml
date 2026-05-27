@@ -1,0 +1,188 @@
+openapi: 3.1.0
+info:
+  title: Accounts Management API
+  description: API for managing orders and accounts in construction projects
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:9000
+    description: Development server
+
+components:
+  schemas:
+    ManagerOrder:
+      type: object
+      required:
+        - ManagerOrderid
+        - projectId
+      properties:
+        projectId:
+          type: string
+          format: uuid
+        ManagerOrderid:
+          type: string
+          format: uuid
+        bricks:
+          type: number
+          default: 0
+          description: Number of bricks ordered
+        steel:
+          type: number
+          default: 0
+          description: Amount of steel ordered
+        cement:
+          type: number
+          default: 0
+          description: Amount of cement ordered
+        coarseAggregate:
+          type: number
+          default: 0
+          description: Amount of coarse aggregate ordered
+        fineAggregate:
+          type: number
+          default: 0
+          description: Amount of fine aggregate ordered
+        status:
+          type: string
+          enum: [pending, approved, denied]
+          default: pending
+        vendorDetails:
+          type: object
+          properties:
+            name:
+              type: string
+            contact:
+              type: string
+            address:
+              type: string
+        trackingDetails:
+          type: object
+          properties:
+            trackingNumber:
+              type: string
+            estimatedDelivery:
+              type: string
+              format: date
+
+    Project:
+      type: object
+      required:
+        - projectId
+        - projectName
+        - projectValue
+        - bricks
+        - steel
+        - cement
+        - coarseAggregate
+        - fineAggregate
+      properties:
+        projectId:
+          type: string
+          format: uuid
+        projectName:
+          type: string
+        projectValue:
+          type: number
+        bricks:
+          type: number
+        steel:
+          type: number
+        cement:
+          type: number
+        coarseAggregate:
+          type: number
+        fineAggregate:
+          type: number
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+
+paths:
+  /manager/update:
+    get:
+      summary: Get all manager order details
+      operationId: getManagerOrder
+      responses:
+        '200':
+          description: Successfully retrieved manager orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ManagerOrder'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: No orders found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                
+  /managerTasks/{ManagerOrderid}:
+    put:
+      summary: Update manager order details
+      operationId: updateManagerOrder
+      parameters:
+        - name: ManagerOrderid
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: ID of the manager order to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagerOrder'
+      responses:
+        '200':
+          description: Order updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagerOrder'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'              
+
+  /projects:
+    get:
+      summary: Get all projects
+      operationId: getProjects
+      responses:
+        '200':
+          description: List of all projects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

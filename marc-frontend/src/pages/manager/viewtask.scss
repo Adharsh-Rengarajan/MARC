@@ -1,0 +1,119 @@
+.view-task-container {
+  display: flex;
+  padding: 20px;
+  background-color: #f3e5f5; // Light purple background
+  min-height: 100vh;
+
+  .sidebar {
+    width: 250px;
+    margin-right: 20px;
+
+    .filters {
+      padding: 20px; // Increased padding for spacing
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-bottom: 20px; // Margin to separate the filters from other content
+
+      .filter-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px; // Increased space between title and filters
+        color: #6a1b9a; // Dark purple
+      }
+
+      .filter-item {
+        margin-bottom: 20px; // Increased space between filter items
+        display: flex;
+        align-items: center;
+      }
+      
+      .clear-filters-btn {
+        background-color: #6a1b9a; // Dark purple button
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px; // Button padding
+        border-radius: 4px; // Optional rounded corners for button
+        margin-top: 20px; // Spacing between filters and button
+        display: block;
+        width: 100%; // Full width for the button
+
+        &:hover {
+          background-color: #4a148c; // Darker purple on hover
+        }
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    position: relative;  // Keep this to allow absolute positioning for the language switcher
+
+    .header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #6a1b9a; // Dark purple
+    }
+
+    .back-btn {
+      margin-bottom: 20px;
+      border: 1px solid #6a1b9a;
+      color: #6a1b9a;
+
+      &:hover {
+        background-color: #f3e5f5;
+      }
+    }
+
+    .error-message {
+      color: #d32f2f; // Red for error
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    .loading-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+    }
+
+    .table-container {
+      margin-top: 20px;
+      max-height: 600px;
+      overflow: auto;
+      border: 1px solid #ddd;
+      min-width: 700px;
+
+      .MuiTableCell-root {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .MuiTableHead-root {
+        background-color: #f5f5f5;
+
+        .MuiTableCell-root {
+          font-weight: bold;
+          color: #6a1b9a; // Dark purple
+        }
+      }
+
+      .MuiTableRow-root {
+        &:nth-of-type(even) {
+          background-color: #f9f9f9;
+        }
+      }
+    }
+
+    .no-tasks-message {
+      text-align: center;
+      font-size: 16px;
+      color: #757575; // Gray for empty message
+      margin-top: 30px;
+    }
+
+    // Language switcher positioned to the top-right corner
+  }
+}

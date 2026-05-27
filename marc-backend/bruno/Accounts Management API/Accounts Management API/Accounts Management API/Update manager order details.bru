@@ -1,0 +1,18 @@
+meta {
+  name: Update manager order details
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:5000/accounts/674c02192a9c5243f04609a7
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ManagerOrderid": "jayanth-put-test"
+  }
+  
+}

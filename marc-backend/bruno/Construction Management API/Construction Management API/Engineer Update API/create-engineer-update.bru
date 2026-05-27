@@ -1,0 +1,43 @@
+meta {
+  name: create-engineer-update
+  type: http
+  seq: 2
+}
+
+post {
+  url: http:localhost:9000/engineerUpdate
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "engineerName": "John Doe",
+    "engineerId": "ENG12345",
+    "projectName": "Skyline Tower",
+    "projectId": "PRJ67890",
+    "bricks": 5000,
+    "steel": 200,
+    "cement": 150,
+    "sand": 300,
+    "coarseAggregate": 100,
+    "fineAggregate": 80,
+    "reports": [
+      {
+        "date": "2024-11-25T08:00:00Z",
+        "description": "Foundation work completed",
+        "progress": 40,
+        "issues": "Delayed material delivery",
+        "resolutions": "Expedited material order"
+      },
+      {
+        "date": "2024-11-20T08:00:00Z",
+        "description": "Excavation phase completed",
+        "progress": 20,
+        "issues": "Rainy weather delays",
+        "resolutions": "Added extra shifts"
+      }
+    ]
+  }
+  
+}

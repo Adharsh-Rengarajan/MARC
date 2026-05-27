@@ -1,0 +1,288 @@
+// .global-scope {
+//     body {
+//       padding: 0;
+//       margin: 0;
+//     }
+  
+//     nav {
+//       width: 100vw;
+//       background-color: #1976d2;
+//       padding: 0;
+//       margin: 0;
+  
+//       h1,
+//       h2 {
+//         padding: 10px;
+//         color: white;
+//         margin: 0;
+//       }
+//     }
+  
+//     .box {
+//       background-color: white;
+//       height: 100vh;
+//       padding: 0;
+//     }
+  
+//     .heading {
+//       display: flex;
+//       flex-direction: row;
+//       background-color: black;
+//       border: 2px solid white;
+//       justify-content: space-around;
+//       color: white;
+//     }
+  
+//     .content {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-around;
+//     }
+  
+//     .tabs {
+//       padding: 0;
+//     }
+  
+//     br {
+//       border: 2px solid black;
+//     }
+  
+//     .form {
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-evenly;
+//       padding: 25px;
+//     }
+  
+//     button {
+//       @include button;
+//     }
+//   }
+  
+// .card {
+//   margin: 25px;
+// }
+
+//   .project-details {
+//     padding: 20px;
+//   }
+  
+//   .task-list {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+  
+//   .task-tile {
+//     background-color: #f9f9f9;
+//     padding: 20px;
+//     margin: 10px;
+//     border-radius: 8px;
+//     width: 250px;
+//     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+//     cursor: pointer;
+//     transition: transform 0.3s ease, box-shadow 0.3s ease;
+//   }
+  
+//   .task-tile:hover {
+//     transform: translateY(-5px);
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+//   }
+  
+//   .task-title {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+  
+//   .task-title h3 {
+//     font-size: 1.2rem;
+//     margin: 0;
+//   }
+  
+//   .status {
+//     font-size: 0.9rem;
+//     padding: 5px 10px;
+//     border-radius: 5px;
+//     color: white;
+//   }
+  
+//   .status.pending {
+//     background-color: #ff9800; /* Pending status */
+//   }
+  
+//   .status.in-progress {
+//     background-color: #2196f3; /* In-progress status */
+//   }
+  
+//   .status.completed {
+//     background-color: #4caf50; /* Completed status */
+//   }
+  
+//   .task-tile p {
+//     color: #555;
+//     font-size: 1rem;
+//     margin-top: 10px;
+//   }
+  
+
+//   .modal-overlay {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: rgba(0, 0, 0, 0.5);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 1000;
+//   }
+
+//   .modal-content {
+//     background: #fff;
+//     padding: 20px;
+//     border-radius: 8px;
+//     width: 80%; /* Reduce the width to make it smaller */
+//     max-width: 900px; /* Limit max width */
+//     overflow-y: auto;
+//     box-sizing: border-box;
+//   }
+
+//   h2 {
+//     text-align: center;
+//   }
+
+//   form {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+//     gap: 20px; /* Space between fields */
+//     align-items: center;
+//   }
+
+//   label {
+//     font-weight: bold;
+//     margin-bottom: 8px;
+//   }
+
+//   input,
+//   textarea {
+//     width: 100%;
+//     padding: 8px;
+//     margin-bottom: 12px;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//   }
+
+//   textarea {
+//     resize: vertical;
+//   }
+
+//   button {
+//     width: 100%;
+//     padding: 12px;
+//     margin-top: 10px;
+//     background-color: #4CAF50;
+//     color: white;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+//   }
+
+
+//   button:hover {
+//     opacity: 0.9;
+//   }
+//   .modal-overlay {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background-color: rgba(0, 0, 0, 0.7);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 1000;
+//   }
+  
+//   .modal-content {
+//     background-color: #fff;
+//     padding: 20px;
+//     border-radius: 8px;
+//     width: 100%;
+//     max-width: 500px;
+//     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+//   }
+  
+//   .modal-content h2 {
+//     font-size: 1.5rem;
+//     margin-bottom: 20px;
+//     color: #333;
+//   }
+  
+//   .modal-content h3 {
+//     font-size: 1.2rem;
+//     margin-bottom: 10px;
+//     color: #555;
+//   }
+  
+//   .modal-content p {
+//     font-size: 1rem;
+//     color: #777;
+//     margin-bottom: 20px;
+//   }
+  
+//   .modal-content label {
+//     font-size: 1rem;
+//     color: #333;
+//     display: block;
+//     margin-bottom: 10px;
+//   }
+  
+//   .modal-content select,
+//   .modal-content input[type="checkbox"] {
+//     font-size: 1rem;
+//     margin-bottom: 20px;
+//   }
+  
+//   .modal-content select {
+//     width: 100%;
+//     padding: 8px;
+//     border-radius: 5px;
+//     border: 1px solid #ccc;
+//   }
+  
+//   .checkbox-container {
+//     display: flex;
+//     align-items: center;
+//     margin-bottom: 20px;
+//   }
+  
+//   .checkbox-container input[type="checkbox"] {
+//     margin-left: 10px;
+//     cursor: pointer;
+//   }
+  
+//   button {
+//     padding: 10px 20px;
+//     background-color: #007bff;
+//     color: #fff;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     transition: background-color 0.2s ease;
+//   }
+  
+//   button:hover {
+//     background-color: #0056b3;
+//   }
+  
+//   button.close-btn {
+//     background-color: #ccc;
+//     margin-left: 10px;
+//   }
+  
+//   button.close-btn:hover {
+//     background-color: #888;
+//   }
+  

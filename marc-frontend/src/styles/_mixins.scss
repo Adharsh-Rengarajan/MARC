@@ -1,0 +1,50 @@
+@use "./variables" as *;
+@use "sass:color";
+
+@mixin gradient-bg {
+  background: linear-gradient(135deg, $accent, $accent-2);
+  min-height: 100vh;
+}
+
+@mixin card-purple {
+  border: 1px solid $primary-light;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fdfdfd, #e6e6fa);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@mixin button-purple {
+  padding: 10px 20px;
+  background: $primary-light;
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid $primary-light;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s, transform 0.2s;
+
+  &:hover {
+    background: color.adjust($primary-light, $lightness: -5%);
+    transform: scale(1.03);
+  }
+}
+
+@mixin header-purple {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(68, 0, 102, 0.85);
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}

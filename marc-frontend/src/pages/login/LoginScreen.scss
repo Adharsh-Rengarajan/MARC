@@ -1,0 +1,104 @@
+@use "../../styles/variables" as *;
+@use "sass:color";
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+  .login-left {
+    flex: 1;
+    background: linear-gradient(120deg, $primary, #6c757d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #fff;
+
+    .graphic-block {
+      text-align: center;
+
+      .brand-mark {
+        font-size: 5rem;
+        font-weight: 800;
+        letter-spacing: 8px;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        margin-bottom: 12px;
+      }
+
+      .brand-tag {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .login-right {
+    flex: 1;
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
+
+    .login-form-wrapper {
+      width: 100%;
+      max-width: 380px;
+    }
+
+    h1 {
+      color: $primary;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: $muted;
+      margin-bottom: 28px;
+    }
+
+    .form-field {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .error-message {
+      color: $danger;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .login-button {
+      background-color: $primary !important;
+      color: #fff !important;
+      font-weight: bold !important;
+      padding: 12px !important;
+
+      &:hover {
+        background-color: color.adjust($primary, $lightness: -10%) !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+
+    .login-left,
+    .login-right {
+      flex: none;
+      width: 100%;
+      box-shadow: none;
+    }
+
+    .login-left {
+      padding: 60px 20px;
+    }
+  }
+}

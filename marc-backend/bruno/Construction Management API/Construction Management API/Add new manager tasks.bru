@@ -1,0 +1,25 @@
+meta {
+  name: Add new manager tasks
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/managerTasks
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "task": [
+      {
+        "title": "",
+        "description": "",
+        "dueDate": "",
+        "status": ""
+      }
+    ],
+    "flag": ""
+  }
+}

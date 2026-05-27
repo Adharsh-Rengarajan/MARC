@@ -1,0 +1,32 @@
+meta {
+  name: Create a new project
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:9000/projects
+  body: json
+  auth: none
+}
+
+headers {
+  : 
+}
+
+body:json {
+  {
+    "projectName": "New Project",
+    "managers": ["manager1", "manager2"],
+    "engineers": ["engineer1", "engineer2"],
+    "accounts": ["accountant1"],
+    "projectValue": 100000,
+    "bricks": 5000,
+    "steel": 1000,
+    "cement": 3000,
+    "sand": 2000,
+    "coarseAggregate": 1500,
+    "fineAggregate": 1200
+  }
+  
+}
